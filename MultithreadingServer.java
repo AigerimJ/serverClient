@@ -5,7 +5,7 @@ import java.net.Socket;
 import java.io.IOException;
 //What if implement runnable?
 //TODO: - check for structures and variables to control multithreading
-//
+//see: https://www.tutorialspoint.com/javaexamples/net_multisoc.html
 class TCP_Server_mult {
     public static void main(String argv[]) throws Exception {
         String clientSentence;
@@ -13,11 +13,11 @@ class TCP_Server_mult {
         ServerSocket welcomeSocket = new ServerSocket(6789);
         Socket connectionSocket = welcomeSocket.accept();
         int length = 0;
-        
-        //use init or struct?
-        public TCP_Server_mult(int port){
-            this.serverPortVal = port;
-        }
+//
+//        //use init or struct?
+//        public TCP_Server_mult(int port){
+//            this.serverPortVal = port;
+//        }
         
         BufferedReader inFromClient = new BufferedReader(new InputStreamReader(connectionSocket.getInputStream()));
         DataOutputStream outToClient = new DataOutputStream(connectionSocket.getOutputStream());
@@ -39,4 +39,6 @@ class TCP_Server_mult {
         
     }
 }
+
+
 
